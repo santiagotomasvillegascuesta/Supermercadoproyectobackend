@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🛒 Supermercado Online</h1>
+            <div class="header-actions">
+                <button id="btnLogin" class="btn">Iniciar Sesión</button>
+                <button id="btnRegistro" class="btn">Registrarse</button>
+                <button id="btnCarrito" class="btn btn-carrito">
+                    Carrito (<span id="carritoCount">0</span>)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="filtros">
+            <h2>Categorías</h2>
+            <div class="filtros-categorias" id="filtrosCategorias">
+                <button class="filtro-btn active" data-categoria="todos">Todos</button>
+            </div>
+        </section>
+
+        <section class="productos">
+            <h2>Catálogo de Productos</h2>
+            <div class="productos-grid" id="productosGrid">
+                <!-- Productos se cargan dinámicamente -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Carrito -->
+    <div id="modalCarrito" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Carrito de Compras</h2>
+                <span class="close" id="closeCarrito">&times;</span>
+            </div>
+            <div class="modal-body" id="carritoBody">
+                <!-- Items del carrito -->
+            </div>
+            <div class="modal-footer">
+                <div class="carrito-total">
+                    <strong>Total: $<span id="carritoTotal">0</span></strong>
+                </div>
+                <button id="btnComprar" class="btn btn-comprar">Realizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Login -->
+    <div id="modalLogin" class="modal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2>Iniciar Sesión</h2>
+                <span class="close" id="closeLogin">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="formLogin">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                    <input type="password" id="loginPassword" placeholder="Contraseña" required>
+                    <button type="submit" class="btn btn-full">Ingresar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Registro -->
+    <div id="modalRegistro" class="modal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2>Registrarse</h2>
+                <span class="close" id="closeRegistro">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="formRegistro">
+                    <input type="text" id="registroNombre" placeholder="Nombre completo" required>
+                    <input type="email" id="registroEmail" placeholder="Email" required>
+                    <input type="password" id="registroPassword" placeholder="Contraseña" required>
+                    <button type="submit" class="btn btn-full">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
